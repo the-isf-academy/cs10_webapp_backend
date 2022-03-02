@@ -5,7 +5,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 #models
 from .models import Task
-from .forms import TaskForm, CreateAccountForm
+from .forms import CreateAccountForm
+# from .forms import TaskForm
 
 from django.contrib.auth import login, authenticate
 
@@ -44,14 +45,14 @@ class TaskDashboard(ListView):
 
         return context
 
-class TaskForm(LoginRequiredMixin,FormView):
-    template_name = 'starter_app/taskForm.html'
-    form_class = TaskForm
-    success_url = '/dashboard'
-
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
+# class TaskForm(LoginRequiredMixin,FormView):
+#     template_name = 'starter_app/taskForm.html'
+#     form_class = TaskForm
+#     success_url = '/dashboard'
+#
+#     def form_valid(self, form):
+#         form.save()
+#         return super().form_valid(form)
 
 
 class EditTask(UpdateView):
