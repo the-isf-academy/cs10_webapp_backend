@@ -8,7 +8,6 @@ urlpatterns = [
 
     path('dashboard/', views.TaskDashboard.as_view(), name='dashboard'),
 
-
     #add newtask urlpattern here
 
     path('updatetask/<int:pk>/', views.EditTask.as_view(), name='update-task'),
